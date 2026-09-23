@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fonts.css">
+    <script src="./script/db.js"></script>
     <script src="./script.js"></script>
     <title>BestellApp</title>
 </head>
@@ -30,34 +32,77 @@
             <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
         </section>
         <section class="menu-main">
-            <div class="basket">
+            <!-- <section class="basket">
+                <h3>Your Basket</h3>
+                <article class="basket-order">
 
-            </div>
-            <section class="menu-burger menu">
-                <div class="menu-title-bg">
+                </article>
+                <div class="basket-order-price">
+                    <table>
+                        <tr>
+                    <th>Subtotal</th>
+                    <td>36,53</td>
+                    </tr>
+                    <tr>
+                    <th>Delivery fee</th>
+                    <td>5</td>
+                    </tr>
+                    <tr>
+                    <th>Total</th>
+                    <td>1231</td>
+                    </tr>
+                    </table>
+                </div>
+            </section> -->
+            <section>
+                <div class="menu-title-bg menu">
                     <div class="menu-title">
                         <img src="./assets/icon/Chanese.svg" alt="Burger icon">
                         <h2>Burger & Sandwiches</h2>
                     </div>
                 </div>
+                <section class="menu" id="menu-burger">
+                   
+                    
+                    <article class="food">
+                        <img src="./assets/img/Veggie_mushroom_black_burger.jpg" alt="">
+                        <div class="food-details">
+                            <div class="food-details-titleprice-wrapper">
+                            <h3>Veggie mushroom black burger</h3>
+                            <p class="price">16,90€</p>
+                            </div>
+                            <p class="detail">Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                            <button>add to basket</button>
+                        </div>
+                        
+                    </article>
+
+
+                </section>
 
             </section>
-            <section class="menu-pizza menu">
-                <div class="menu-title-bg">
-                <div class="menu-title">
-                    <img src="./assets/icon/Pizza.svg" alt="Pizza icon">
-                    <h2>Pizza (30cm)</h2>
+            <section>
+                <div class="menu-title-bg menu">
+                    <div class="menu-title">
+                        <img src="./assets/icon/Pizza.svg" alt="Pizza icon">
+                        <h2>Pizza (30cm)</h2>
                     </div>
                 </div>
+                <section class="menu" id="menu-pizza">
+
+                </section>
 
             </section>
-            <section class="menu-salad menu">
-                <div class="menu-title-bg">
-                <div class="menu-title">
-                    <img src="./assets/icon/Salad.svg" alt="Salad icon">
-                    <h2>Salad</h2>
+            <section>
+                <div class="menu-title-bg menu">
+                    <div class="menu-title">
+                        <img src="./assets/icon/Salad.svg" alt="Salad icon">
+                        <h2>Salad</h2>
                     </div>
                 </div>
+                <section class="menu" id="menu-salad">
+
+                </section>
 
             </section>
         </section>
