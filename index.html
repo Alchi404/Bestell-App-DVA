@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./fonts.css">
-    <script src="./script/db.js"></script>
-    <script src="./script.js"></script>
+    <script defer src="./script/db.js"></script>
+    <script defer src="./script/template.js"></script>
+    <script defer src="./script.js"></script>
     <title>BestellApp</title>
 </head>
 
-<body>
+<body onload="renderMenu()">
     <header>
         <img class="header-logo" src="./assets/icon/Logo.svg" alt="Logo der Bestell App">
         <img class="header-burger-menu" src="./assets/icon/burger_menu.svg" alt="burger menu Icon">

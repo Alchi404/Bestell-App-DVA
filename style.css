@@ -130,7 +130,8 @@ header {
             background-color: #FDEADC;
             border-radius: 12px;
             margin: 30px 0;
-            font-size: 24px;
+            font-size: 16px;
+            
 
             img {
                 height: 120px;
@@ -150,9 +151,6 @@ header {
                 position: relative;
 
                 button {
-                    position: absolute;
-                    right: 0;
-                    bottom: 20px;
                     max-width: 115px;
                     align-self: self-end;
                     font-weight: 600;
@@ -163,6 +161,7 @@ header {
                 font-weight: 600;
                 display: flex;
                 justify-content: space-between;
+                font-size: 24px;
             }
         }
     }
