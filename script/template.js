@@ -1,7 +1,7 @@
 function templateMenuBurger(i) {
     return /*html*/`
             <article class="food">
-                <img src="${myBurger[i].img}" alt="" class="food-image">
+                <img src="${myBurger[i].img}" alt="Bildvorschau des Gerichtes, lese die Beschreibung" class="food-image">
                 <div class="food-wrapper">
                     <h3 class="food-title">${myBurger[i].name}</h3>
                     <p class="food-price">${myBurger[i].price.toFixed(2)}€</p>
@@ -15,7 +15,7 @@ function templateMenuBurger(i) {
 function templateMenuPizza(i) {
     return /*html*/`
             <article class="food">
-                <img src="${myPizza[i].img}" alt="" class="food-image">
+                <img src="${myPizza[i].img}" alt="Bildvorschau des Gerichtes, lese die Beschreibung" class="food-image">
                  <div class="food-wrapper">
                      <h3 class="food-title">${myPizza[i].name}</h3>
                      <p class="food-price">${myPizza[i].price.toFixed(2)}€</p>
@@ -29,7 +29,7 @@ function templateMenuPizza(i) {
 function templateMenuSalad(i) {
     return /*html*/`
             <article class="food">
-                <img src="${mySalad[i].img}" alt="" class="food-image">
+                <img src="${mySalad[i].img}" alt="Bildvorschau des Gerichtes, lese die Beschreibung" class="food-image">
                  <div class="food-wrapper">
                      <h3 class="food-title">${mySalad[i].name}</h3>
                      <p class="food-price">${mySalad[i].price.toFixed(2)}€</p>
