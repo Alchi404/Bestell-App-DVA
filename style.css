@@ -159,13 +159,29 @@ header {
                 height: 120px;
                 margin: 10px;
                 font-weight: 500;
-                display: flex;
-                flex-direction: column;
-                position: relative;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto;
+
+                .food-details-titleprice-wrapper {
+                    grid-column: 1 / 3;
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 24px;
+                }
+
+                .detail{
+                    grid-column: 1;
+                    grid-row: 2;
+                }
 
                 button {
+                    grid-column: 2;
+                    grid-row: 2;
                     max-width: 115px;
                     align-self: self-end;
+                    margin-left: auto;
                     font-weight: 600;
                     border: 0;
                     border-radius: 20px;
@@ -174,19 +190,14 @@ header {
                     transition: 250ms;
                 }
 
-                button:hover{
+                button:hover {
                     cursor: pointer;
                     color: #E76C1F;
                     box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.20);
                     transition: 250ms;
                 }
-            }
 
-            .food-details-titleprice-wrapper {
-                font-weight: 600;
-                display: flex;
-                justify-content: space-between;
-                font-size: 24px;
+                
             }
         }
     }
@@ -197,7 +208,7 @@ header {
     padding: 20px;
     position: sticky;
     top: 0px;
-    height: 800px;
+    max-height: 800px;
     background-color: #363534;
     border-radius: 20px 0 0 20px;
 
@@ -207,10 +218,10 @@ header {
     }
 
     article {
-
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
+        max-height: 50%;
         gap: 8px;
     }
 
@@ -239,7 +250,7 @@ header {
 
             img {
                 margin: 0 5px;
-                height: 12px;
+                height: 15px;
                 align-self: center;
                 justify-self: center;
             }
