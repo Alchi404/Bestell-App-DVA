@@ -13,10 +13,20 @@
 </head>
 
 <body onload="renderMenu()">
-    <header>
+    <header id="start">
         <img class="header-logo" src="./assets/icon/Logo.svg" alt="Logo der Bestell App">
         <img class="header-burger-menu" src="./assets/icon/burger_menu.svg" alt="burger menu Icon">
     </header>
+
+    <dialog id="Order-Confirmed">
+        <div class="dialog-wrapper">
+        <img src="./assets/icon/close.svg" alt="Schließen" class="close-button" onclick="closeDialog()">
+        <img src="./assets/icon/delivery.png" alt="Bild eines Lieferwagens">
+        <p>Order confirmed!</p>
+        <span>Your food is on the way!</span>
+        </div>
+    </dialog>
+
     <main>
         <section class="hero">
             <div class="hero-banner">
@@ -33,62 +43,56 @@
             <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
         </section>
         <div class="content-wrapper">
-        <section class="menu-main">
-            <section>
-                <div class="menu-title-bg menu">
-                    <div class="menu-title">
-                        <img src="./assets/icon/Chanese.svg" alt="Burger icon">
-                        <h2>Burger & Sandwiches</h2>
-                    </div>
-                </div>
-                <section class="menu" id="menu-burger">
-                   
-                    
-                    <article class="food">
-                        <img src="./assets/img/Veggie_mushroom_black_burger.jpg" alt="">
-                        <div class="food-details">
-                            <div class="food-details-titleprice-wrapper">
-                            <h3>Veggie mushroom black burger</h3>
-                            <p class="price">16,90€</p>
-                            </div>
-                            <p class="detail">Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
-                            <button>add to basket</button>
+            <section class="menu-main" id="menu">
+                <section>
+                    <div class="menu-title-bg menu">
+                        <div class="menu-title">
+                            <img src="./assets/icon/Chanese.svg" alt="Burger icon">
+                            <h2>Burger & Sandwiches</h2>
                         </div>
-                        
-                    </article>
-
-
-                </section>
-
-            </section>
-            <section>
-                <div class="menu-title-bg menu">
-                    <div class="menu-title">
-                        <img src="./assets/icon/Pizza.svg" alt="Pizza icon">
-                        <h2>Pizza (30cm)</h2>
                     </div>
-                </div>
-                <section class="menu" id="menu-pizza">
-
+                    <section class="menu" id="menu-burger">
+                        <article class="food">
+                            <img src="./assets/img/Veggie_mushroom_black_burger.jpg" alt="">
+                            <div class="food-details">
+                                <div class="food-details-titleprice-wrapper">
+                                    <h3>Veggie mushroom black burger</h3>
+                                    <p class="price">16,90€</p>
+                                </div>
+                                <p class="detail">Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                                <button>add to basket</button>
+                            </div>
+                        </article>
+                    </section>
                 </section>
-
-            </section>
-            <section>
-                <div class="menu-title-bg menu">
-                    <div class="menu-title">
-                        <img src="./assets/icon/Salad.svg" alt="Salad icon">
-                        <h2>Salad</h2>
+                <section>
+                    <div class="menu-title-bg menu">
+                        <div class="menu-title">
+                            <img src="./assets/icon/Pizza.svg" alt="Pizza icon">
+                            <h2>Pizza (30cm)</h2>
+                        </div>
                     </div>
-                </div>
-                <section class="menu" id="menu-salad">
+                    <section class="menu" id="menu-pizza">
+
+                    </section>
+
+                </section>
+                <section>
+                    <div class="menu-title-bg menu">
+                        <div class="menu-title">
+                            <img src="./assets/icon/Salad.svg" alt="Salad icon">
+                            <h2>Salad</h2>
+                        </div>
+                    </div>
+                    <section class="menu" id="menu-salad">
+                    </section>
                 </section>
             </section>
-        </section>
 
-         <section class="basket">
+            <section class="basket">
                 <h3>Your Basket</h3>
                 <article id="basket-order">
-                    <div  class="order">
+                    <div class="order">
                         <p>1x Filler Burger Test mit Pilz</p>
                         <div class="amount-price-wrapper">
                             <button><img src="./assets/icon/delete.svg" alt=""></button>
@@ -101,26 +105,41 @@
                 <div class="basket-order-price">
                     <table>
                         <tr>
-                    <th>Subtotal</th>
-                    <td id="Subtotal-price">36,53</td>
-                    </tr>
-                    <tr>
-                    <th>Delivery fee</th>
-                    <td>5€</td>
-                    </tr>
-                    <tr class="total">
-                    <th>Total</th>
-                    <td id="Total-price">1231</td>
-                    </tr>
+                            <th>Subtotal</th>
+                            <td id="Subtotal-price">36,53</td>
+                        </tr>
+                        <tr>
+                            <th>Delivery fee</th>
+                            <td>5€</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Total</th>
+                            <td id="Total-price">1231</td>
+                        </tr>
                     </table>
                 </div>
-                <button class="buy-button">Buy now (Preis hier)</button>
+                <button class="buy-button" onclick="orderConfirmed()">Buy now (Preis hier)</button>
             </section>
         </div>
     </main>
     <footer>
-
+        <div>
+            <img src="./assets/icon/copyright.svg" alt="">
+            <p>2025 BurgerHouse</p>
+        </div>
+        <a href="">Imprint</a>
+        <a href="">Cookie Preferences</a>
     </footer>
-</body>
 
+    <nav class="mobile-nav">
+        <a href="#start">
+            <img src="./assets/icon/home.svg" alt=""></a>
+        <a href="">
+            <img src="./assets/icon/person.svg" alt=""></a>
+        <a href="#menu">
+            <img src="./assets/icon/takeout_dining.svg" alt=""></a>
+        <a href="#start">
+            <img src="./assets/icon/shopping_cart.svg" alt=""></a>
+    </nav>
+</body>
 </html>

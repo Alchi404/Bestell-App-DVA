@@ -1,4 +1,5 @@
 let Sum = 0;
+let dialogRef = document.getElementById("Order-Confirmed");
 
 function renderMenu() {
     renderBurger()
@@ -85,7 +86,6 @@ function addOrderAmount(i) {
 }
 
 function calcSubtotal() {
-
         for (let i = 0; i < myOrder.length; i++) {
             Sum += myOrder[i].price
         }
@@ -101,6 +101,12 @@ function calcTotal() {
     } else {
         document.getElementById('Total-price').innerHTML = (Total.toFixed(2) + "€");
     }
+}
 
+function orderConfirmed() {
+    dialogRef.showModal();
+}
 
+function closeDialog() {
+    dialogRef.close();
 }
