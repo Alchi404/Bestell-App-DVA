@@ -1,0 +1,276 @@
+@media screen and (min-width:768px) and (max-width:1200px) {
+
+    header {
+        .header-burger-menu {
+            display: none;
+        }
+    }
+
+    .basket {
+        position: fixed;
+        margin-top: auto;
+        width: clamp(17.5rem, 13.571rem + 19.643vi, 31.25rem);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        transition: 250ms;
+
+        .close-basket {
+            display: block;
+        }
+    }
+
+    .basket-hidden {
+        bottom: -800px;
+    }
+
+
+    .menu-main {
+        width: 100%;
+    }
+
+    .content-wrapper {
+        margin: 0 20px;
+    }
+
+    nav {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width:400px) and (max-width:768px) {
+
+    header {
+        .header-logo {
+            padding-left: 70px;
+        }
+
+        .header-burger-menu {
+            display: none;
+        }
+    }
+
+
+    .hero {
+
+        .hero-title-wrapper {
+            flex-direction: column-reverse;
+        }
+
+        p {
+            width: 25ch;
+            text-align: center;
+        }
+    }
+
+
+    .basket {
+        position: fixed;
+        margin-top: auto;
+        width: clamp(17.5rem, 13.571rem + 19.643vi, 31.25rem);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        transition: 250ms;
+
+        .close-basket {
+            display: block;
+        }
+    }
+
+    .basket-hidden {
+        bottom: -800px;
+    }
+
+    .menu-main {
+        width: 100%;
+
+        .menu-title-bg {
+
+            .menu-title {
+                margin: 0 20px;
+            }
+        }
+
+        .menu {
+            .food {
+                flex-direction: column;
+
+                .food-image {
+                    width: auto;
+                }
+
+                .food-wrapper {
+                    width: auto;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto auto;
+
+                    .food-title {
+                        grid-column: 1 / 3;
+                        grid-row: 1;
+                    }
+
+                    .food-price {
+                        grid-column: 1;
+                        grid-row: 3;
+                        justify-self: flex-start;
+                    }
+
+                    .detail {
+                        grid-column: 1 / 3;
+                        grid-row: 2;
+                    }
+
+                    button {
+                        grid-column: 2;
+                        grid-row: 3;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-wrapper {
+        margin: 0 20px;
+    }
+
+    nav {
+        display: block;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+        height: 150px;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:400px) {
+
+    header {
+        .header-logo {
+            padding-left: 40px;
+        }
+
+        .header-burger-menu {
+            display: none;
+        }
+    }
+
+    h1{
+        font-size: 38px;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+
+    .hero {
+
+        .hero-title-wrapper {
+            flex-direction: column-reverse;
+        }
+
+        p {
+            font-size: 20px;
+            width: 22ch;
+            text-align: center;
+        }
+    }
+
+
+    .basket {
+        position: fixed;
+        margin-top: auto;
+        width: clamp(17.5rem, 13.571rem + 19.643vi, 31.25rem);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        transition: 250ms;
+
+        .close-basket {
+            display: block;
+        }
+    }
+
+    .basket-hidden {
+        bottom: -800px;
+    }
+
+    .menu-main {
+        width: 100%;
+
+        .menu-title-bg {
+
+            img {
+                bottom: 0;
+                left: -5px;
+            }
+
+            h2 {
+                font-size: 32px;
+                margin-left: 90px;
+            }
+
+            .menu-title {
+                margin: 0 10px;
+            }
+        }
+
+        .menu {
+            .food {
+                flex-direction: column;
+
+                .food-image {
+                    width: auto;
+                }
+
+                .food-wrapper {
+                    width: auto;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto auto;
+
+                    .food-title {
+                        grid-column: 1 / 3;
+                        grid-row: 1;
+                    }
+
+                    .food-price {
+                        grid-column: 1;
+                        grid-row: 3;
+                        justify-self: flex-start;
+                    }
+
+                    .detail {
+                        grid-column: 1 / 3;
+                        grid-row: 2;
+                    }
+
+                    button {
+                        grid-column: 2;
+                        grid-row: 3;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-wrapper {
+        margin: 0 20px;
+    }
+
+    nav {
+        display: block;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+        height: 150px;
+    }
+}

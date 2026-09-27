@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./mediaquarry.css">
+    <link rel="icon" href="./assets/icon/takeout_dining.svg">
     <script defer src="./script/db.js"></script>
     <script defer src="./script/template.js"></script>
     <script defer src="./script.js"></script>
@@ -20,7 +22,7 @@
 
     <dialog id="Order-Confirmed">
         <div class="dialog-wrapper">
-        <img src="./assets/icon/close.svg" alt="Schließen" class="close-button" onclick="closeDialog()">
+        <img src="./assets/icon/close.svg" alt="Schließen" class="close-button" onclick="closeDialog()" tabindex="1">
         <img src="./assets/icon/delivery.png" alt="Bild eines Lieferwagens">
         <p>Order confirmed!</p>
         <span>Your food is on the way!</span>
@@ -54,11 +56,9 @@
                     <section class="menu" id="menu-burger">
                         <article class="food">
                             <img src="./assets/img/Veggie_mushroom_black_burger.jpg" alt="">
-                            <div class="food-details">
-                                <div class="food-details-titleprice-wrapper">
-                                    <h3>Veggie mushroom black burger</h3>
-                                    <p class="price">16,90€</p>
-                                </div>
+                            <div class="food-wrapper">
+                                    <h3 class="food-title">Veggie mushroom black burger</h3>
+                                    <p class="food-price">16,90€</p>
                                 <p class="detail">Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
                                 <button>add to basket</button>
                             </div>
@@ -89,36 +89,29 @@
                 </section>
             </section>
 
-            <section class="basket">
+            <section class="basket basket-hidden" id="basket">
+                <img src="./assets/icon/close.svg" alt="Schließen" class="close-basket" onclick="toggleMobileBasket()" tabindex="1">
                 <h3>Your Basket</h3>
                 <article id="basket-order">
-                    <div class="order">
-                        <p>1x Filler Burger Test mit Pilz</p>
-                        <div class="amount-price-wrapper">
-                            <button><img src="./assets/icon/delete.svg" alt=""></button>
-                            <span>1</span>
-                            <button><img src="./assets/icon/+.svg" alt=""></button>
-                        </div>
-                        <span>1600€</span>
-                    </div>
                 </article>
                 <div class="basket-order-price">
+                    <p>Today Special Free Delivery!</p>
                     <table>
-                        <tr>
+                        <!-- <tr>
                             <th>Subtotal</th>
-                            <td id="Subtotal-price">36,53</td>
+                            <td id="Subtotal-price">0€</td>
                         </tr>
                         <tr>
                             <th>Delivery fee</th>
                             <td>5€</td>
-                        </tr>
+                        </tr> -->
                         <tr class="total">
                             <th>Total</th>
-                            <td id="Total-price">1231</td>
+                            <td id="Total-price">0€</td>
                         </tr>
                     </table>
                 </div>
-                <button class="buy-button" onclick="orderConfirmed()">Buy now (Preis hier)</button>
+                <button class="buy-button" onclick="orderConfirmed()" id="buy-button">Buy now (Preis hier)</button>
             </section>
         </div>
     </main>
@@ -127,19 +120,20 @@
             <img src="./assets/icon/copyright.svg" alt="">
             <p>2025 BurgerHouse</p>
         </div>
-        <a href="">Imprint</a>
         <a href="">Cookie Preferences</a>
+        <a href="">Imprint</a>
     </footer>
 
-    <nav class="mobile-nav">
+    <nav>
+        <div class="mobile-nav-wrapper">
         <a href="#start">
             <img src="./assets/icon/home.svg" alt=""></a>
         <a href="">
             <img src="./assets/icon/person.svg" alt=""></a>
         <a href="#menu">
             <img src="./assets/icon/takeout_dining.svg" alt=""></a>
-        <a href="#start">
-            <img src="./assets/icon/shopping_cart.svg" alt=""></a>
+            <img src="./assets/icon/shopping_cart.svg" alt="" onclick="toggleMobileBasket()">
+            </div>
     </nav>
 </body>
 </html>

@@ -8,8 +8,6 @@ function renderMenu() {
     renderBasket()
 }
 
-
-
 function renderBurger() {
     const Burger = document.getElementById('menu-burger')
     Burger.innerHTML = "";
@@ -44,69 +42,93 @@ function renderBasket() {
     for (let i = 0; i < myOrder.length; i++) {
         Order.innerHTML += templateBasketOrder(i)
     }
+
+    calcSubtotal()
 }
 
+// function addOrderBurger(i) {
+//     let Order = { ...myBurger[i], amount: 1 };
+//     myOrder.push(Order);
+//     renderBasket()
+// }
+
 function addOrderBurger(i) {
-    // let selectetOrder = myBurger[i]
-    let Order = { ...myBurger[i], amount: 1 };
-    myOrder.push(Order);
-    renderBasket()
+    let checkOrder = myOrder.findIndex(item => item.name === myBurger[i].name)
+
+    if (checkOrder !== -1) {
+        myOrder[checkOrder].amount++;
+        renderBasket()
+    } else {
+        let Order = { ...myBurger[i], amount: 1 };
+        myOrder.push(Order);
+        renderBasket()
+    }
 }
 
 function addOrderPizza(i) {
-    // let selectetOrder = myBurger[i]
-    let Order = { ...myPizza[i], amount: 1 };
-    myOrder.push(Order);
-    renderBasket()
+    let checkOrder = myOrder.findIndex(item => item.name === myPizza[i].name)
+
+    if (checkOrder !== -1) {
+        myOrder[checkOrder].amount++;
+        renderBasket()
+    } else {
+        let Order = { ...myPizza[i], amount: 1 };
+        myOrder.push(Order);
+        renderBasket()
+    }
 }
 
 function addOrderSalad(i) {
-    // let selectetOrder = myBurger[i]
-    let Order = { ...mySalad[i], amount: 1 };
-    myOrder.push(Order);
-    renderBasket()
+    let checkOrder = myOrder.findIndex(item => item.name === mySalad[i].name)
+
+    if (checkOrder !== -1) {
+        myOrder[checkOrder].amount++;
+        renderBasket()
+    } else {
+        let Order = { ...mySalad[i], amount: 1 };
+        myOrder.push(Order);
+        renderBasket()
+    }
 }
+
 
 function removeOrderAmount(i) {
     myOrder[i].amount--;
 
     if (myOrder[i].amount === 0) {
-        myOrder.splice(i)
+        myOrder.splice(i, 1)
     }
-    calcSubtotal()
-    calcTotal()
     renderBasket()
 }
 
 function addOrderAmount(i) {
     myOrder[i].amount++;
-    calcSubtotal()
-    calcTotal()
     renderBasket()
 }
 
 function calcSubtotal() {
-        for (let i = 0; i < myOrder.length; i++) {
-            Sum += myOrder[i].price
+    let Sum = 0
+    for (let i = 0; i < myOrder.length; i++) {
+        if (myOrder[i].amount > 0) {
+            Sum += myOrder[i].price * myOrder[i].amount;
         }
-        document.getElementById('Subtotal-price').innerHTML = (Sum.toFixed(2) + "€");
-        calcTotal()
-}
-
-function calcTotal() {
-    let Total = Sum + 5
-
-    if (Total === 5) {
-        document.getElementById('Total-price').innerHTML = ("0€");
-    } else {
-        document.getElementById('Total-price').innerHTML = (Total.toFixed(2) + "€");
     }
+
+    document.getElementById('Total-price').innerHTML = (Sum.toFixed(2) + "€");
+    document.getElementById('buy-button').innerHTML = "Buy now (" + (Sum.toFixed(2) + "€)");
 }
 
 function orderConfirmed() {
     dialogRef.showModal();
+    myOrder = []
+    renderBasket()
 }
 
 function closeDialog() {
     dialogRef.close();
+}
+
+function toggleMobileBasket() {
+    let basket = document.getElementById('basket');
+    basket.classList.toggle('basket-hidden');
 }
